@@ -2,7 +2,10 @@
 
 import { Drawer } from 'vaul';
 import { useState } from 'react';
-import { DollarSign } from 'lucide-react';
+// Заглушки для иконок
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const DollarSign = (props: any) => <div {...props}>$</div>;
+
 import { useNotification } from '../../context/NotificContext';
 import { reinvestDeposit } from '../../lib/actions';
 import useGlobalStore from '../../store/useGlobalStore';

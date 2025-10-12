@@ -2,7 +2,12 @@
 
 import { useState, useRef, useMemo, useEffect } from 'react';
 import { Drawer } from 'vaul';
-import { X, ChevronLeft } from 'lucide-react';
+// Заглушки для иконок
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const X = (props: any) => <div {...props}>✕</div>;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const ChevronLeft = (props: any) => <div {...props}>←</div>;
+
 import clsx from 'clsx';
 import { cryptoMethods } from '../../lib/data';
 import { motion } from 'framer-motion';

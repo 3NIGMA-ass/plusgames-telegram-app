@@ -1,4 +1,9 @@
-import { LucideDollarSign, LucideShieldCheck } from 'lucide-react';
+// Заглушки для иконок
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const LucideDollarSign = (props: any) => <div {...props}>?</div>;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const LucideShieldCheck = (props: any) => <div {...props}>?</div>;
+
 
 export function InfoBlock() {
   return (

@@ -1,6 +1,13 @@
 'use client';
 
-import { MessageSquareText, Gift, User } from 'lucide-react';
+// Заглушки для иконок
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const MessageSquareText = (props: any) => <div {...props}>?</div>;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const Gift = (props: any) => <div {...props}>🎁</div>;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const User = (props: any) => <div {...props}>👤</div>;
+
 import { useEffect, useState } from 'react';
 import { useWebApp } from '../../lib/hooks/useWebApp';
 import Image from 'next/image';

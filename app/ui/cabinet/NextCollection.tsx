@@ -2,7 +2,9 @@
 
 import clsx from 'clsx';
 import dayjs from 'dayjs';
-import { Timer } from 'lucide-react';
+// Заглушка для иконки
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const Timer = (props: any) => <div {...props}>⏰</div>;
 
 export function NextCollectionCard({
   lastCollectedAt,

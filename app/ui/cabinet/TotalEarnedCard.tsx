@@ -1,6 +1,9 @@
 'use client';
 
-import { Wallet } from 'lucide-react';
+// Заглушки для иконок
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const Wallet = (props: any) => <div {...props}>💳</div>;
+
 
 interface TotalEarnedCardProps {
   deposit: number;

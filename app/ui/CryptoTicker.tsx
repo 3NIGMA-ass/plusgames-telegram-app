@@ -37,7 +37,6 @@ const ArrowUpRight = (props: any) => React.createElement('svg', props);
 // import { CryptoCurrency } from '../../types/global';
 
 export default function CryptoTicker() {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const { data: cryptocurrencies, error } = useSWR('/api/crypto', (url: string) => 
     fetch(url).then(res => res.json())
   );

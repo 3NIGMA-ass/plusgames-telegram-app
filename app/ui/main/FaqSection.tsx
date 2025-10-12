@@ -2,7 +2,10 @@
 
 import { useState, useRef, useLayoutEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
+// Заглушки для иконок
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const ChevronDown = (props: any) => <div {...props}>↓</div>;
+
 
 const faqItems = [
   {

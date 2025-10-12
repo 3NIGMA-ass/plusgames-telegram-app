@@ -1,7 +1,14 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Backpack, Briefcase, TrendingUp } from 'lucide-react';
+// Заглушки для иконок
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const Backpack = (props: any) => <div {...props}>?</div>;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const Briefcase = (props: any) => <div {...props}>?</div>;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const TrendingUp = (props: any) => <div {...props}>📈</div>;
+
 import { NextTariffCard } from './NextTariffCard';
 import { useNotification } from '../../context/NotificContext';
 import ReinvestModal from '../modals/ReinvestModal';

@@ -1,6 +1,11 @@
 'use client';
 
-import { Briefcase, Layers } from 'lucide-react';
+// Заглушки для иконок
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const Briefcase = (props: any) => <div {...props}>?</div>;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const Layers = (props: any) => <div {...props}>?</div>;
+
 
 interface Tariff {
   name: string;

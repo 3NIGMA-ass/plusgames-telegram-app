@@ -10,7 +10,12 @@ import { createCardDepositTransaction } from '../../lib/actions';
 import { useWebApp } from '../../lib/hooks/useWebApp';
 import { support } from '../../lib/images';
 import Image from 'next/image';
-import { AlertCircle, MessageSquare } from 'lucide-react';
+// Заглушки для иконок
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const AlertCircle = (props: any) => <div {...props}>?</div>;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const MessageSquare = (props: any) => <div {...props}>?</div>;
+
 
 type SelectedCardType = {
   card_number: string;

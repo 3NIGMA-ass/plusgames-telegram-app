@@ -1,6 +1,12 @@
 'use client';
 
-import { CircleArrowDown, CircleArrowUp, Copy } from 'lucide-react';
+// Заглушки для иконок
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const CircleArrowDown = (props: any) => <div {...props}>⬇</div>;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const CircleArrowUp = (props: any) => <div {...props}>⬆</div>;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const Copy = (props: any) => <div {...props}>📋</div>;
 import { useModal } from '../../context/ModalContext';
 import { useNotification } from '../../context/NotificContext';
 import useGlobalStore from '../../store/useGlobalStore';

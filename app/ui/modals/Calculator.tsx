@@ -3,7 +3,10 @@
 import { Drawer } from 'vaul';
 import { useState } from 'react';
 import { tariffs, Tariff } from '../../lib/constants/tariffs';
-import { Calculator } from 'lucide-react';
+// Заглушки для иконок
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const Calculator = (props: any) => <div {...props}>?</div>;
+
 
 export function CalculatorButton() {
   const [input, setInput] = useState<string>('');

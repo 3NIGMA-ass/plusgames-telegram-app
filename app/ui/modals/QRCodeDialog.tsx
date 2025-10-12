@@ -3,7 +3,10 @@
 import { useRef, useEffect } from 'react';
 import { Drawer } from 'vaul';
 import { QRCodeCanvas } from 'qrcode.react';
-import { X } from 'lucide-react';
+// Заглушки для иконок
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const X = (props: any) => <div {...props}>✕</div>;
+
 
 interface QRCodeDialogProps {
   isOpen: boolean;

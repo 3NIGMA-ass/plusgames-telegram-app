@@ -2,7 +2,13 @@
 
 import { useState } from 'react';
 import Slider from 'react-slick';
-import { Gift, ArrowRight, BookText } from 'lucide-react';
+// Заглушки для иконок
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const Gift = (props: any) => <div {...props}>🎁</div>;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const ArrowRight = (props: any) => <div {...props}>→</div>;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const BookText = (props: any) => <div {...props}>📖</div>;
 import { useWebApp } from '../../lib/hooks/useWebApp';
 import useGlobalStore from '../../store/useGlobalStore';
 

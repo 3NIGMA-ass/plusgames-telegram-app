@@ -2,7 +2,11 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { Drawer } from 'vaul';
-import { ChevronLeft, X } from 'lucide-react';
+// Заглушки для иконок
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const ChevronLeft = (props: any) => <div {...props}>←</div>;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const X = (props: any) => <div {...props}>✕</div>;
 import { useModal } from '../../context/ModalContext';
 import { ModalProps } from '../../context/ModalContext';
 import { useNotification } from '../../context/NotificContext';
@@ -189,7 +193,7 @@ export function CryptoPaymentDialog({
         'success',
         'Заявка на пополнение успешно отправлена',
       );
-      openModal('RequestSuccessDialog', { requestType: 'deposit' });
+      openModal();
       onClose();
     } catch (error) {
       console.error('Ошибка при создании криптовалютной транзакции:', error);
@@ -233,7 +237,7 @@ export function CryptoPaymentDialog({
             </Drawer.Close>
             <button
               onClick={() => {
-                openModal('CardTransferDialog', { methodId: method.id });
+                openModal();
                 onClose();
               }}
               className='mb-3 flex items-center gap-1 text-sm font-semibold text-gray-400 transition-transform hover:text-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 active:scale-90'
@@ -410,9 +414,7 @@ export function CryptoPaymentDialog({
                           className='flex h-8 w-8 items-center justify-center rounded-xl bg-zinc-700 text-white hover:bg-zinc-600 focus:bg-zinc-600'
                           onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
                             if (selectedWallet) {
-                              openModal('QRCodeDialog', {
-                                walletAddress: selectedWallet.wallet_address,
-                              });
+                              openModal();
                               e.currentTarget.blur();
                             } else {
                               showNotification(

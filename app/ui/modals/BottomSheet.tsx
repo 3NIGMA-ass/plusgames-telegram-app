@@ -3,7 +3,14 @@
 import { useState, useRef, useEffect } from 'react';
 import { Drawer } from 'vaul';
 import clsx from 'clsx';
-import { CircleArrowDown, CircleArrowUp, X } from 'lucide-react';
+// Заглушки для иконок
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const CircleArrowDown = (props: any) => <div {...props}>⬇</div>;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const CircleArrowUp = (props: any) => <div {...props}>⬆</div>;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const X = (props: any) => <div {...props}>✕</div>;
+
 import { tabs, bankMethods, cryptoMethods } from '../../lib/data';
 import { PaymentMethodCard } from '../modals/PaymentMethodCard';
 import Image from 'next/image';

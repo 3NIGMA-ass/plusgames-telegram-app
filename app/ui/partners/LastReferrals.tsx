@@ -1,5 +1,10 @@
 import Image from 'next/image';
-import { RefreshCw, X } from 'lucide-react';
+// Заглушки для иконок
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const RefreshCw = (props: any) => <div {...props}>🔄</div>;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const X = (props: any) => <div {...props}>✕</div>;
+
 import useGlobalStore from '../../store/useGlobalStore';
 import { useNotification } from '../../context/NotificContext';
 import { useState } from 'react';

@@ -1,12 +1,19 @@
 'use client';
 
-import {
-  House,
-  Newspaper,
-  Users,
-  Banknote,
-  BriefcaseBusiness,
-} from 'lucide-react';
+// Заглушки для иконок
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const House = (props: any) => <div {...props}>?</div>;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const Newspaper = (props: any) => <div {...props}>?</div>;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const Users = (props: any) => <div {...props}>👥</div>;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const Banknote = (props: any) => <div {...props}>?</div>;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const BriefcaseBusiness = (props: any) => <div {...props}>?</div>;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const  = (props: any) => <div {...props}>?</div>;
+
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import clsx from 'clsx';

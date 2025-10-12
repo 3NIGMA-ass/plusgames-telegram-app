@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { CopyToClipboard } from 'react-copy-to-clipboard';
+import { copyToClipboard } from '../lib/utils/copyToClipboard';
 import { Users, Copy, Check, Share2 } from 'lucide-react';
 import { LastReferrals } from '../ui/partners/LastReferrals';
 import { useWebApp } from '../lib/hooks/useWebApp';
@@ -84,12 +84,21 @@ export default function PartnersPage() {
     }
   };
 
-  const handleCopy = () => {
-    showNotification(
-      'Успешно скопировано!',
-      'success',
-      'Теперь поделитесь ею с друзьями',
-    );
+  const handleCopy = async () => {
+    const success = await copyToClipboard(referralLink);
+    if (success) {
+      showNotification(
+        'Успешно скопировано!',
+        'success',
+        'Теперь поделитесь ею с друзьями',
+      );
+    } else {
+      showNotification(
+        'Ошибка копирования',
+        'error',
+        'Попробуйте снова',
+      );
+    }
   };
 
   const handleClaimBonus = async () => {
@@ -383,12 +392,13 @@ export default function PartnersPage() {
               Пригласить друга
             </span>
           </button>
-          <CopyToClipboard text={referralLink} onCopy={handleCopy}>
-            <button className='group relative flex h-12 w-12 items-center justify-center rounded-full border border-purple-700/50 bg-gradient-to-tr from-purple-900/50 via-black/30 to-black/40 shadow-md shadow-black/50 transition-all duration-500 active:bg-gradient-to-tr active:from-purple-800 active:via-purple-700/80 active:to-purple-800 active:shadow-lg active:shadow-purple-900/50'>
-              <div className='absolute inset-0 rounded-full bg-purple-400/20 opacity-0 blur-lg transition-opacity duration-300 group-hover:opacity-30'></div>
-              <Copy className='relative z-10 h-5 w-5 text-white' />
-            </button>
-          </CopyToClipboard>
+          <button 
+            onClick={handleCopy}
+            className='group relative flex h-12 w-12 items-center justify-center rounded-full border border-purple-700/50 bg-gradient-to-tr from-purple-900/50 via-black/30 to-black/40 shadow-md shadow-black/50 transition-all duration-500 active:bg-gradient-to-tr active:from-purple-800 active:via-purple-700/80 active:to-purple-800 active:shadow-lg active:shadow-purple-900/50'
+          >
+            <div className='absolute inset-0 rounded-full bg-purple-400/20 opacity-0 blur-lg transition-opacity duration-300 group-hover:opacity-30'></div>
+            <Copy className='relative z-10 h-5 w-5 text-white' />
+          </button>
         </div>
 
         <div className='relative rounded-lg border border-zinc-700/50 bg-gradient-to-br from-black/50 via-black/40 to-black/50 px-5 py-4 text-center shadow-[0_0_10px_rgba(139,92,246,0.2)] backdrop-blur-sm'>
@@ -396,13 +406,14 @@ export default function PartnersPage() {
           <p className='mb-2 text-[10px] font-medium uppercase tracking-widest text-zinc-400'>
             Ваша реферальная ссылка
           </p>
-          <CopyToClipboard text={referralLink} onCopy={handleCopy}>
-            <div className='relative flex cursor-pointer items-center justify-center gap-2'>
-              <p className='break-words text-sm font-semibold text-white'>
-                {referralLink}
-              </p>
-            </div>
-          </CopyToClipboard>
+          <div 
+            onClick={handleCopy}
+            className='relative flex cursor-pointer items-center justify-center gap-2'
+          >
+            <p className='break-words text-sm font-semibold text-white'>
+              {referralLink}
+            </p>
+          </div>
         </div>
       </div>
 

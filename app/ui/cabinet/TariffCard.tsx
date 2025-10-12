@@ -3,10 +3,10 @@
 import { useState, useEffect } from 'react';
 import { Backpack, Briefcase, TrendingUp } from 'lucide-react';
 import { NextTariffCard } from './NextTariffCard';
-import { useNotification } from '@/app/context/NotificContext';
+import { useNotification } from '../../context/NotificContext';
 import ReinvestModal from '../modals/ReinvestModal';
-import useGlobalStore from '@/app/store/useGlobalStore';
-import { saveAccum, updateAccum } from '@/app/lib/actions';
+import useGlobalStore from '../../store/useGlobalStore';
+import { saveAccum, updateAccum } from '../../lib/actions';
 
 interface Tariff {
   name: string;

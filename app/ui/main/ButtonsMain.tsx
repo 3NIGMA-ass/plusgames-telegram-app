@@ -1,8 +1,8 @@
 'use client';
 
-import { useModal } from '@/app/context/ModalContext';
-import { useNotification } from '@/app/context/NotificContext';
-import useGlobalStore from '@/app/store/useGlobalStore';
+import { useModal } from '../../context/ModalContext';
+import { useNotification } from '../../context/NotificContext';
+import useGlobalStore from '../../store/useGlobalStore';
 import clsx from 'clsx';
 
 export default function ButtonsMain() {

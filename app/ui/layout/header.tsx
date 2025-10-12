@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { useWebApp } from '../../lib/hooks/useWebApp';
 import Image from 'next/image';
 import { IconButton } from '@mui/material';
-import useGlobalStore from '@/app/store/useGlobalStore';
+import useGlobalStore from '../../store/useGlobalStore';
 import { Drawer } from 'vaul';
 
 export default function HeaderMain() {

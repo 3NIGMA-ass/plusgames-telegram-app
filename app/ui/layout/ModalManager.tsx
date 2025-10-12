@@ -1,6 +1,6 @@
 'use client';
 
-import { useModal } from '@/app/context/ModalContext';
+import { useModal } from '../../context/ModalContext';
 import { BottomSheet } from '../modals/BottomSheet';
 import { CardTransferDialog } from '../modals/CardTransferDialog';
 import { WithdrawalRequestDialog } from '../modals/WithdrawalRequestDialog';
@@ -8,7 +8,7 @@ import { CryptoPaymentDialog } from '../modals/CryptoPaymentDialog';
 import { RequestSuccessDialog } from '../modals/RequestSuccessDialog';
 import { QRCodeDialog } from '../modals/QRCodeDialog';
 import { CardTransferConfirmationDialog } from '../modals/CardTransferConfirmationDialog';
-import { ModalProps, ModalType } from '@/app/context/ModalContext';
+import { ModalProps, ModalType } from '../../context/ModalContext';
 
 export function ModalManager() {
   const { state, closeModal } = useModal();

@@ -3,14 +3,14 @@
 import { Drawer } from 'vaul';
 import { useState } from 'react';
 import { DollarSign } from 'lucide-react';
-import { useNotification } from '@/app/context/NotificContext';
-import { reinvestDeposit } from '@/app/lib/actions';
-import useGlobalStore from '@/app/store/useGlobalStore';
+import { useNotification } from '../../context/NotificContext';
+import { reinvestDeposit } from '../../lib/actions';
+import useGlobalStore from '../../store/useGlobalStore';
 import clsx from 'clsx';
 import {
   getReinvestmentsByTelegramId,
   getUserByTelegramId,
-} from '@/app/lib/dataQuery';
+} from '../../lib/dataQuery';
 
 export default function ReinvestModal() {
   const [input, setInput] = useState<string>('');

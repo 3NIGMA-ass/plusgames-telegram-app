@@ -19,7 +19,7 @@ export default function Page() {
       transition={{ duration: 0.3 }}
     >
       <ButtonsMain />
-      <BannerSlider />
+      <BannerSlider banners={[]} />
 
       <TariffBlocks />
 

@@ -2,7 +2,7 @@
 
 import clsx from 'clsx';
 import { CircleArrowDown, CircleArrowUp, X } from 'lucide-react';
-import useGlobalStore from '@/app/store/useGlobalStore';
+import useGlobalStore from '../../store/useGlobalStore';
 
 const RecentTransactions: React.FC = () => {
   const { recentTransactions } = useGlobalStore();

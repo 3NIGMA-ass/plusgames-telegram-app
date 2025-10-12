@@ -1,8 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import useGlobalStore from '@/app/store/useGlobalStore';
-import { useWebApp } from '@/app/lib/hooks/useWebApp';
+import useGlobalStore from '../../store/useGlobalStore';
+import { useWebApp } from '../../lib/hooks/useWebApp';
 
 export function Banner() {
   const { appConfig } = useGlobalStore();

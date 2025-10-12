@@ -8,10 +8,10 @@ import { tabs, bankMethods, cryptoMethods } from '../../lib/data';
 import { PaymentMethodCard } from '../modals/PaymentMethodCard';
 import Image from 'next/image';
 import { support } from '../../lib/images';
-import { useModal } from '@/app/context/ModalContext';
-import useGlobalStore from '@/app/store/useGlobalStore';
-import { useNotification } from '@/app/context/NotificContext';
-import { useWebApp } from '@/app/lib/hooks/useWebApp';
+import { useModal } from '../../context/ModalContext';
+import useGlobalStore from '../../store/useGlobalStore';
+import { useNotification } from '../../context/NotificContext';
+import { useWebApp } from '../../lib/hooks/useWebApp';
 
 type Tab = (typeof tabs)[number];
 

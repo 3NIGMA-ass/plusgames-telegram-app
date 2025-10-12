@@ -4,11 +4,11 @@ import { useState, useEffect, useRef } from 'react';
 import { Drawer } from 'vaul';
 import clsx from 'clsx';
 import { bankMethods, cryptoMethods } from '../../lib/data';
-import { useModal } from '@/app/context/ModalContext';
-import { ModalProps } from '@/app/context/ModalContext';
-import { useNotification } from '@/app/context/NotificContext';
-import useGlobalStore from '@/app/store/useGlobalStore';
-import { createWithdrawalRequest } from '@/app/lib/actions';
+import { useModal } from '../../context/ModalContext';
+import { ModalProps } from '../../context/ModalContext';
+import { useNotification } from '../../context/NotificContext';
+import useGlobalStore from '../../store/useGlobalStore';
+import { createWithdrawalRequest } from '../../lib/actions';
 
 type WithdrawalRequestDialogProps = ModalProps['WithdrawalRequestDialog'] & {
   isOpen: boolean;

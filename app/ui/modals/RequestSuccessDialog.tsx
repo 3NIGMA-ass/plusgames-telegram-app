@@ -4,9 +4,9 @@ import { useEffect, useRef } from 'react';
 import { Drawer } from 'vaul';
 import Image from 'next/image';
 import { support } from '../../lib/images';
-import { ModalProps } from '@/app/context/ModalContext';
-import useGlobalStore from '@/app/store/useGlobalStore';
-import { useWebApp } from '@/app/lib/hooks/useWebApp';
+import { ModalProps } from '../../context/ModalContext';
+import useGlobalStore from '../../store/useGlobalStore';
+import { useWebApp } from '../../lib/hooks/useWebApp';
 
 type RequestSuccessDialogProps = ModalProps['RequestSuccessDialog'] & {
   isOpen: boolean;

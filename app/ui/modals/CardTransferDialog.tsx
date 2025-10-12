@@ -6,10 +6,10 @@ import { X, ChevronLeft } from 'lucide-react';
 import clsx from 'clsx';
 import { cryptoMethods } from '../../lib/data';
 import { motion } from 'framer-motion';
-import { useModal } from '@/app/context/ModalContext';
-import useGlobalStore from '@/app/store/useGlobalStore';
-import { useNotification } from '@/app/context/NotificContext';
-import { fetchPaymentData } from '@/app/lib/dataQuery';
+import { useModal } from '../../context/ModalContext';
+import useGlobalStore from '../../store/useGlobalStore';
+import { useNotification } from '../../context/NotificContext';
+import { fetchPaymentData } from '../../lib/dataQuery';
 
 type CardTransferDialogProps = {
   isOpen: boolean;

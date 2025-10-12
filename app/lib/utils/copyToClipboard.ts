@@ -20,13 +20,13 @@ export const copyToClipboard = async (text: string): Promise<boolean> => {
         const successful = document.execCommand('copy');
         document.body.removeChild(textArea);
         return successful;
-      } catch (err) {
+      } catch {
         document.body.removeChild(textArea);
         return false;
       }
     }
-  } catch (err) {
-    console.error('Ошибка копирования:', err);
+  } catch {
+    console.error('Ошибка копирования');
     return false;
   }
 };

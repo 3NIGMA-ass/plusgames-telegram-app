@@ -3,13 +3,13 @@
 import { useState, useRef, useEffect } from 'react';
 import { Drawer } from 'vaul';
 import { ChevronLeft, X } from 'lucide-react';
-import { useModal } from '@/app/context/ModalContext';
-import { ModalProps } from '@/app/context/ModalContext';
-import { useNotification } from '@/app/context/NotificContext';
-import useGlobalStore from '@/app/store/useGlobalStore';
+import { useModal } from '../../context/ModalContext';
+import { ModalProps } from '../../context/ModalContext';
+import { useNotification } from '../../context/NotificContext';
+import useGlobalStore from '../../store/useGlobalStore';
 import clsx from 'clsx';
-import { createCryptoDepositTransaction } from '@/app/lib/actions';
-import { cryptoMethods } from '@/app/lib/data';
+import { createCryptoDepositTransaction } from '../../lib/actions';
+import { cryptoMethods } from '../../lib/data';
 
 type CryptoPaymentDialogProps = ModalProps['CryptoPaymentDialog'] & {
   isOpen: boolean;

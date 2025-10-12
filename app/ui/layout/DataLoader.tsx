@@ -1,17 +1,17 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import useGlobalStore from '@/app/store/useGlobalStore';
+import useGlobalStore from '../../store/useGlobalStore';
 import {
   fetchInitialData,
   createUser,
   updateUserTgData,
-} from '@/app/lib/dataQuery';
-import LoadingScreen from '@/app/ui/layout/LoadingScreen';
-import { UserDataTg } from '@/app/lib/definition';
-import { useNotification } from '@/app/context/NotificContext';
-import { useWebApp } from '@/app/lib/hooks/useWebApp';
-import DepositEarningsModal from '@/app/ui/modals/DepositEarningsModal';
+} from '../../lib/dataQuery';
+import LoadingScreen from './LoadingScreen';
+import { UserDataTg } from '../../lib/definition';
+import { useNotification } from '../../context/NotificContext';
+import { useWebApp } from '../../lib/hooks/useWebApp';
+import DepositEarningsModal from '../modals/DepositEarningsModal';
 
 export default function DataLoader() {
   const [isDataLoaded, setIsDataLoaded] = useState(false);

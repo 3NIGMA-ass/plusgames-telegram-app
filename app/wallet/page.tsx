@@ -1,13 +1,13 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import useGlobalStore from '@/app/store/useGlobalStore';
-import { CalculatorButton } from '@/app/ui/modals/Calculator';
-import { Transactions } from '@/app/ui/wallet/transactions';
-import { UserCard } from '@/app/ui/wallet/UserWalletCard';
-import { Banner } from '@/app/ui/banners/BannerWallet';
-import { InfoBlock } from '@/app/ui/wallet/InfoWalletBlock';
-import Footer from '@/app/ui/layout/footer';
+import useGlobalStore from '../store/useGlobalStore';
+import { CalculatorButton } from '../ui/modals/Calculator';
+import { Transactions } from '../ui/wallet/transactions';
+import { UserCard } from '../ui/wallet/UserWalletCard';
+import { Banner } from '../ui/banners/BannerWallet';
+import { InfoBlock } from '../ui/wallet/InfoWalletBlock';
+import Footer from '../ui/layout/footer';
 
 export default function WalletPage() {
   const { user } = useGlobalStore();

@@ -2,12 +2,12 @@
 
 import { useState, useMemo, useEffect } from 'react';
 import { Drawer } from 'vaul';
-import useGlobalStore from '@/app/store/useGlobalStore';
-import { useNotification } from '@/app/context/NotificContext';
-import { saveAccum } from '@/app/lib/actions';
-import { DepositEarning } from '@/app/lib/definition';
+import useGlobalStore from '../../store/useGlobalStore';
+import { useNotification } from '../../context/NotificContext';
+import { saveAccum } from '../../lib/actions';
+import { DepositEarning } from '../../lib/definition';
 import Link from 'next/link';
-import { tariffs } from '@/app/lib/constants/tariffs';
+import { tariffs } from '../../lib/constants/tariffs';
 import Image from 'next/image';
 
 const coin_img_base64 =

@@ -1,9 +1,9 @@
 'use client';
 
 import { useState } from 'react';
-import { useModal } from '@/app/context/ModalContext';
-import { useNotification } from '@/app/context/NotificContext';
-import useGlobalStore from '@/app/store/useGlobalStore';
+import { useModal } from '../../context/ModalContext';
+import { useNotification } from '../../context/NotificContext';
+import useGlobalStore from '../../store/useGlobalStore';
 import {
   Ban,
   Check,
@@ -14,7 +14,7 @@ import {
   X,
 } from 'lucide-react';
 import clsx from 'clsx';
-import { getTransactionsByTelegramId } from '@/app/lib/dataQuery';
+import { getTransactionsByTelegramId } from '../../lib/dataQuery';
 
 interface ComponentTransaction {
   id: number;

@@ -1,6 +1,12 @@
 'use client';
 
-import { BookText, ArrowRight, BookOpen } from 'lucide-react';
+// Заглушки для иконок
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const BookText = (props: any) => <div {...props}>📖</div>;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const ArrowRight = (props: any) => <div {...props}>→</div>;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const BookOpen = (props: any) => <div {...props}>📚</div>;
 import { useWebApp } from '../lib/hooks/useWebApp';
 import dynamic from 'next/dynamic';
 import Footer from '../ui/layout/footer';
@@ -8,7 +14,7 @@ import FaqSection from '../ui/main/FaqSection';
 import { motion } from 'framer-motion';
 import useGlobalStore from '../store/useGlobalStore';
 
-const CryptoTicker = dynamic(() => import('@/app/ui/CryptoTicker'), {
+const CryptoTicker = dynamic(() => import('../ui/CryptoTicker'), {
   ssr: false,
 });
 

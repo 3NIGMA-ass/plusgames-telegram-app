@@ -2,13 +2,13 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { Drawer } from 'vaul';
-import { useModal } from '@/app/context/ModalContext';
-import { useNotification } from '@/app/context/NotificContext';
-import useGlobalStore from '@/app/store/useGlobalStore';
+import { useModal } from '../../context/ModalContext';
+import { useNotification } from '../../context/NotificContext';
+import useGlobalStore from '../../store/useGlobalStore';
 import clsx from 'clsx';
-import { createCardDepositTransaction } from '@/app/lib/actions';
-import { useWebApp } from '@/app/lib/hooks/useWebApp';
-import { support } from '@/app/lib/images';
+import { createCardDepositTransaction } from '../../lib/actions';
+import { useWebApp } from '../../lib/hooks/useWebApp';
+import { support } from '../../lib/images';
 import Image from 'next/image';
 import { AlertCircle, MessageSquare } from 'lucide-react';
 

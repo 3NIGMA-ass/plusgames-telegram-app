@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 
 // Используем типы из global.d.ts
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 type TwaWebApp = any;
 
 let webAppCache: TwaWebApp | null = null;

@@ -2,11 +2,19 @@
 
 import { motion } from 'framer-motion';
 import { copyToClipboard } from '../lib/utils/copyToClipboard';
-import { Users, Copy, Check, Share2 } from 'lucide-react';
+// Заглушки для иконок
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const Users = (props: any) => <div {...props}>👥</div>;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const Copy = (props: any) => <div {...props}>📋</div>;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const Check = (props: any) => <div {...props}>✓</div>;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const Share2 = (props: any) => <div {...props}>📤</div>;
 import { LastReferrals } from '../ui/partners/LastReferrals';
 import { useWebApp } from '../lib/hooks/useWebApp';
 import Footer from '../ui/layout/footer';
-import { useNotification } from '@/app/context/NotificContext';
+import { useNotification } from '../context/NotificContext';
 import { useState } from 'react';
 import useGlobalStore from '../store/useGlobalStore';
 import { claimPartnerBonus } from '../lib/actions';
@@ -144,7 +152,7 @@ export default function PartnersPage() {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
     >
-      <style jsx>{`
+      <style>{`
         .stepper-box {
           background-color: #1a1a1d;
           border-radius: 14px;

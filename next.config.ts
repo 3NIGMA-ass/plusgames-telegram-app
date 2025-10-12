@@ -17,9 +17,7 @@ const nextConfig: NextConfig = {
       { protocol: 'https', hostname: 'coin-images.coingecko.com' },
     ],
   },
-  experimental: {
-    serverComponentsExternalPackages: ['pg'],
-  },
+  serverExternalPackages: ['pg'],
   webpack: (config) => {
     config.externals.push({
       'pg-native': 'pg-native',

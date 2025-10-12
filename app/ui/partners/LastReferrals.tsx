@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import { RefreshCw, X } from 'lucide-react';
-import useGlobalStore from '@/app/store/useGlobalStore';
-import { useNotification } from '@/app/context/NotificContext';
+import useGlobalStore from '../../store/useGlobalStore';
+import { useNotification } from '../../context/NotificContext';
 import { useState } from 'react';
-import { getPartnerEarningsByTelegramId } from '@/app/lib/dataQuery';
+import { getPartnerEarningsByTelegramId } from '../../lib/dataQuery';
 import clsx from 'clsx';
 
 const logoBase64 =

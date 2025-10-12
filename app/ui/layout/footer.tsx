@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { useWebApp } from '../../lib/hooks/useWebApp';
 import { logo, support } from '../../lib/images';
-import useGlobalStore from '@/app/store/useGlobalStore';
+import useGlobalStore from '../../store/useGlobalStore';
 
 export default function Footer() {
   const { appConfig } = useGlobalStore();

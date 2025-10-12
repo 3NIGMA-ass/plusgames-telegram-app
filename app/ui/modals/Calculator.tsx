@@ -2,7 +2,7 @@
 
 import { Drawer } from 'vaul';
 import { useState } from 'react';
-import { tariffs, Tariff } from '@/app/lib/constants/tariffs';
+import { tariffs, Tariff } from '../../lib/constants/tariffs';
 import { Calculator } from 'lucide-react';
 
 export function CalculatorButton() {

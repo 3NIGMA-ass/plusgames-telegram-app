@@ -4,7 +4,6 @@ import React from 'react';
 
 // Временные заглушки для модулей
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const useSWR = (url: string, fetcher: any) => {
   const [data, setData] = React.useState(null);
   const [error, setError] = React.useState(null);

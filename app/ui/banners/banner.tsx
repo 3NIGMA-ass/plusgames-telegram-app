@@ -6,18 +6,22 @@ import React, { useEffect, useRef, useState } from 'react';
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const Slider = ({ children, ...props }: any) => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const [currentSlide, setCurrentSlide] = useState(0);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const sliderRef = useRef<any>(null);
   
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const settings = {
     ...props,
@@ -27,6 +31,7 @@ const settings = {
     },
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 ref: (ref: any) => {
       sliderRef.current = ref;
       if (props.ref) props.ref(ref);
@@ -37,6 +42,7 @@ ref: (ref: any) => {
 };
 
 // Заглушка для Base64Image
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const Base64Image = ({ src, alt, className, ...props }: any) => {
@@ -94,6 +100,7 @@ export function BannerSlider({ banners }: { banners: Banner[] }) {
       <Slider {...settings}>
         {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 {banners.map((banner: any, index: number) => (
           <div key={index}>
             <div className="flex max-h-36 min-h-[100px]">

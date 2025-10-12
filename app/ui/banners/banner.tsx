@@ -4,14 +4,18 @@ import React, { useEffect, useRef, useState } from 'react';
 
 // Временные заглушки для модулей
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const Slider = ({ children, ...props }: any) => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [currentSlide, setCurrentSlide] = useState(0);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+const [currentSlide, setCurrentSlide] = useState(0);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const sliderRef = useRef<any>(null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+const sliderRef = useRef<any>(null);
   
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const settings = {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+const settings = {
     ...props,
     beforeChange: (oldIndex: number, newIndex: number) => {
       setCurrentSlide(newIndex);

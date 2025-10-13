@@ -205,7 +205,6 @@ export function ProfitChart({
               tick={{ fill: '#a1a1aa', fontSize: 10 }}
               axisLine={false}
               tickLine={false}
-              padding={{ left: 10 }}
             />
             <YAxis
               tick={{ fill: '#a1a1aa', fontSize: 10 }}

@@ -46,10 +46,21 @@ export default function DataLoader() {
   } = useGlobalStore();
 
   useEffect(() => {
+    // Таймаут для WebApp инициализации
+    const timer = setTimeout(() => {
+      if (!webAppReady) {
+        console.log('WebApp не инициализировался, загружаем в режиме просмотра');
+        setWebAppReady(true);
+      }
+    }, 3000); // Ждём 3 секунды
+
     if (WebApp && WebApp.initDataUnsafe?.user) {
       setWebAppReady(true);
+      clearTimeout(timer);
     }
-  }, [WebApp]);
+
+    return () => clearTimeout(timer);
+  }, [WebApp, webAppReady]);
 
   const animationFrameRef = useRef<number | null>(null);
 
@@ -91,22 +102,63 @@ export default function DataLoader() {
 
     const loadData = async () => {
       const user = WebApp?.initDataUnsafe?.user;
+      
+      // Если нет пользователя Telegram, показываем демо-режим
       if (!user) {
+        console.log('Демо-режим: пользователь Telegram не найден');
+        await animateProgress(50, 1000);
+        
+        // Устанавливаем демо пользователя
+        setUser({
+          telegram_id: '0',
+          first_name: 'Demo User',
+          username: null,
+          photo_url: null,
+          balance: 0,
+          deposit_amount: 0,
+          total_profit: 0,
+          partner_bonus_received: false,
+          created_at: new Date(),
+          referred_by: null,
+          last_deposit_at: null,
+        });
+        
+        setAppConfig({
+          id: 1,
+          manager_link: 'https://t.me/support',
+          referral_percent: 12,
+          useapiforcard: false,
+          api_amount_ranges: [],
+          manager_only_threshold: 0,
+        });
+        
+        await animateProgress(100, 500);
+        setIsVisible(false);
+        setTimeout(() => {
+          setIsDataLoaded(true);
+        }, 500);
+        
         showNotification(
-          'Ошибка инициализации Telegram',
-          'error',
-          'Не удалось получить данные пользователя Telegram',
+          'Демо режим',
+          'info',
+          'Откройте приложение через Telegram для полного функционала',
         );
         return;
       }
 
       const telegramId = BigInt(user.id);
 
-      WebApp.lockOrientation();
-      WebApp.disableVerticalSwipes();
-      WebApp.expand();
-      WebApp.setHeaderColor('#000000');
-      WebApp.setBottomBarColor('#000000');
+      if (WebApp) {
+        try {
+          WebApp.lockOrientation();
+          WebApp.disableVerticalSwipes();
+          WebApp.expand();
+          WebApp.setHeaderColor('#000000');
+          WebApp.setBottomBarColor('#000000');
+        } catch (e) {
+          console.log('WebApp методы недоступны:', e);
+        }
+      }
 
       try {
         await animateProgress(15, 300);

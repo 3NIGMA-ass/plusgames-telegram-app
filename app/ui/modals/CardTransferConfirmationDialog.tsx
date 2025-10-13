@@ -4,6 +4,7 @@
 const AlertCircle = (props: any) => <span {...props}>⚠️</span>;
 const MessageSquare = (props: any) => <span {...props}>💬</span>;
 import { useState, useEffect, useRef } from 'react';
+import React from 'react';
 import { Drawer } from 'vaul';
 import { useModal } from '../../context/ModalContext';
 import { useNotification } from '../../context/NotificContext';

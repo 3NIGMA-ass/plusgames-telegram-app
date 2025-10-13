@@ -4,6 +4,7 @@
 const DollarSign = (props: any) => <span {...props}>💲</span>;
 import { Drawer } from 'vaul';
 import { useState } from 'react';
+import React from 'react';
 
 import { useNotification } from '../../context/NotificContext';
 import { reinvestDeposit } from '../../lib/actions';
@@ -33,7 +34,7 @@ export default function ReinvestModal() {
   const isTooSmall = deposit < minDeposit;
   const isTooLarge = deposit > balance;
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: { target: { value: string } }) => {
     const value = e.target.value.replace(/\D/g, '');
     if (value.length <= 8) setInput(value);
   };

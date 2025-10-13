@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import React from 'react';
 import { useModal } from '../../context/ModalContext';
 import { useNotification } from '../../context/NotificContext';
 import useGlobalStore from '../../store/useGlobalStore';

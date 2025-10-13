@@ -1,11 +1,28 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+
+// Иконки
 /* eslint-disable @typescript-eslint/no-explicit-any */
-const Package = (props: any) => <span {...props}>💼</span>;
-const TrendingUp = (props: any) => <span {...props}>📈</span>;
-const Briefcase = (props: any) => <span {...props}>💼</span>;
-import { NextTariffCard } from './NextTariffCard';
+const Package = (props: any) => (
+  <svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+    <path d="M16.5 9.4l-9-5.19M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+    <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+    <line x1="12" y1="22.08" x2="12" y2="12"/>
+  </svg>
+);
+const TrendingUp = (props: any) => (
+  <svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+    <polyline points="17 6 23 6 23 12"/>
+  </svg>
+);
+const Briefcase = (props: any) => (
+  <svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+  </svg>
+);
 import { useNotification } from '../../context/NotificContext';
 import ReinvestModal from '../modals/ReinvestModal';
 import useGlobalStore from '../../store/useGlobalStore';
@@ -22,13 +39,11 @@ export function TariffCard({
   tariff,
   deposit,
   accumulation,
-  nextTariff,
   profitPercentage,
 }: {
   tariff: Tariff | null;
   deposit: number;
   accumulation: number;
-  nextTariff?: Tariff;
   profitPercentage: number;
 }) {
   const Icon = tariff?.icon || Briefcase;
@@ -316,14 +331,6 @@ export function TariffCard({
         </button>
       </div>
       <div className='my-2 h-px bg-gradient-to-r from-transparent via-purple-500/40 to-transparent' />
-
-      {nextTariff && (
-        <NextTariffCard
-          tariff={tariff}
-          deposit={deposit}
-          nextTariff={nextTariff}
-        />
-      )}
     </div>
   );
 }

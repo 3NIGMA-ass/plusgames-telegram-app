@@ -5,6 +5,7 @@ const User = (props: any) => <span {...props}>👤</span>;
 const Gift = (props: any) => <span {...props}>🎁</span>;
 const MessageSquareText = (props: any) => <span {...props}>💬</span>;
 import { useEffect, useState } from 'react';
+import React from 'react';
 import { useWebApp } from '../../lib/hooks/useWebApp';
 import Image from 'next/image';
 import { IconButton } from '@mui/material';

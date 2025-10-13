@@ -5,6 +5,7 @@ const CircleArrowUp = (props: any) => <span {...props}>⬆️</span>;
 const CircleArrowDown = (props: any) => <span {...props}>⬇️</span>;
 const X = (props: any) => <span {...props}>✕</span>;
 import { useState, useRef, useEffect } from 'react';
+import React from 'react';
 import { Drawer } from 'vaul';
 import clsx from 'clsx';
 

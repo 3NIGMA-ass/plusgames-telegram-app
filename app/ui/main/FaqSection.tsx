@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
+import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const ChevronDown = (props: any) => <span {...props}>▼</span>;

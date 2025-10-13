@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef, useEffect } from 'react';
+import React from 'react';
 import { Drawer } from 'vaul';
 import { QRCodeCanvas } from 'qrcode.react';
 /* eslint-disable @typescript-eslint/no-explicit-any */

@@ -2,6 +2,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
+import React from 'react';
 import { Drawer } from 'vaul';
 const ChevronLeft = (props: any) => <span {...props}>‹</span>;
 const X = (props: any) => <span {...props}>✕</span>;
@@ -134,9 +135,7 @@ export function CryptoPaymentDialog({
 
   const copyToClipboard = async (
     text: string,
-    setRipples: React.Dispatch<
-      React.SetStateAction<{ id: number; left: number; top: number }[]>
-    >,
+    setRipples: (value: { id: number; left: number; top: number }[]) => void,
     type: 'address' | 'amount',
   ) => {
     try {
@@ -410,7 +409,7 @@ export function CryptoPaymentDialog({
                       <div className='ml-auto shrink-0'>
                         <button
                           className='flex h-8 w-8 items-center justify-center rounded-xl bg-zinc-700 text-white hover:bg-zinc-600 focus:bg-zinc-600'
-                          onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
+                          onClick={(e: { currentTarget: { blur: () => void } }) => {
                             if (selectedWallet) {
                               openModal();
                               e.currentTarget.blur();

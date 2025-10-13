@@ -39,13 +39,6 @@ export default function InvestmentDashboard() {
     return tariffs[2]; // BITCOIN
   })();
 
-  // Находим следующий тариф
-  const nextTariff = (() => {
-    if (deposit < 10000) return tariffs[1]; // TON
-    if (deposit < 100000) return tariffs[2]; // BITCOIN
-    return tariffs[2]; // уже максимальный
-  })();
-
   // Накопление (несобранная прибыль)
   const accumulation = (() => {
     if (!depositEarnings || !Array.isArray(depositEarnings)) return 0;
@@ -125,7 +118,6 @@ export default function InvestmentDashboard() {
           tariff={currentTariff}
           deposit={deposit}
           accumulation={accumulation}
-          nextTariff={nextTariff}
           profitPercentage={currentTariff?.rate || 0}
         />
       </div>

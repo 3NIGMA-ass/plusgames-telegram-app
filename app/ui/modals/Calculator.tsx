@@ -4,6 +4,7 @@
 const Calculator = (props: any) => <span {...props}>🧮</span>;
 import { Drawer } from 'vaul';
 import { useState } from 'react';
+import React from 'react';
 import { tariffs, Tariff } from '../../lib/constants/tariffs';
 
 
@@ -38,7 +39,7 @@ export function CalculatorButton() {
   const monthly = +(daily * 30).toFixed(2);
   const yearly = +(daily * 365).toFixed(2);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: { target: { value: string } }) => {
     const value = e.target.value.replace(/\D/g, '');
     if (value.length <= 9) setInput(value);
   };

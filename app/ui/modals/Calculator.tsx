@@ -1,11 +1,10 @@
 'use client';
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
+const Calculator = (props: any) => <span {...props}>🧮</span>;
 import { Drawer } from 'vaul';
 import { useState } from 'react';
 import { tariffs, Tariff } from '../../lib/constants/tariffs';
-// Заглушки для иконок
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const Calculator = (props: any) => <div {...props}>?</div>;
 
 
 export function CalculatorButton() {

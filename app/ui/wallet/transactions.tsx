@@ -4,21 +4,14 @@ import { useState } from 'react';
 import { useModal } from '../../context/ModalContext';
 import { useNotification } from '../../context/NotificContext';
 import useGlobalStore from '../../store/useGlobalStore';
-// Заглушки для иконок
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const Ban = (props: any) => <div {...props}>🚫</div>;
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const Check = (props: any) => <div {...props}>✓</div>;
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const CircleArrowDown = (props: any) => <div {...props}>⬇</div>;
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const CircleArrowUp = (props: any) => <div {...props}>⬆</div>;
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const Clock8 = (props: any) => <div {...props}>🕐</div>;
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const RefreshCw = (props: any) => <div {...props}>🔄</div>;
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const X = (props: any) => <div {...props}>✕</div>;
+/* eslint-disable @typescript-eslint/no-explicit-any */
+const Ban = (props: any) => <span {...props}>🚫</span>;
+const Check = (props: any) => <span {...props}>✓</span>;
+const CircleArrowDown = (props: any) => <span {...props}>⬇️</span>;
+const CircleArrowUp = (props: any) => <span {...props}>⬆️</span>;
+const Clock8 = (props: any) => <span {...props}>🕐</span>;
+const RefreshCw = (props: any) => <span {...props}>🔄</span>;
+const X = (props: any) => <span {...props}>✕</span>;
 import clsx from 'clsx';
 import { getTransactionsByTelegramId } from '../../lib/dataQuery';
 

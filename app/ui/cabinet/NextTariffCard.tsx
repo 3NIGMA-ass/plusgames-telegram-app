@@ -1,11 +1,8 @@
 'use client';
 
-// Заглушки для иконок
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const Briefcase = (props: any) => <div {...props}>?</div>;
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const Layers = (props: any) => <div {...props}>?</div>;
-
+// Эмодзи заглушка для иконки
+/* eslint-disable @typescript-eslint/no-explicit-any */
+const IconPlaceholder = (props: any) => <span {...props}>📊</span>;
 
 interface Tariff {
   name: string;
@@ -28,7 +25,7 @@ export function NextTariffCard({
   return (
     <div className='col-span-2'>
       <div className='mb-2 flex items-center gap-1'>
-        <Layers className='h-3 w-3 text-purple-400' />
+        <IconPlaceholder className='h-3 w-3 text-purple-400' />
         <p className='text-[10px] font-semibold uppercase tracking-wide text-white'>
           Тарифные планы
         </p>
@@ -56,7 +53,7 @@ export function NextTariffCard({
               {nextTariff?.icon ? (
                 <nextTariff.icon className='h-3 w-3 text-purple-400' />
               ) : (
-                <Briefcase className='h-3 w-3 text-purple-400' />
+                <IconPlaceholder className='h-3 w-3 text-purple-400' />
               )}
             </div>
             <p className='text-[8px] text-purple-400/70'>Следующий тариф</p>

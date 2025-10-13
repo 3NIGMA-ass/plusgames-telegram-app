@@ -2,13 +2,8 @@
 
 import { useState } from 'react';
 import Slider from 'react-slick';
-// Заглушки для иконок
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const Gift = (props: any) => <div {...props}>🎁</div>;
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const ArrowRight = (props: any) => <div {...props}>→</div>;
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const BookText = (props: any) => <div {...props}>📖</div>;
+const Gift = (props: any) => <span {...props}>🎁</span>;
 import { useWebApp } from '../../lib/hooks/useWebApp';
 import useGlobalStore from '../../store/useGlobalStore';
 
@@ -51,12 +46,7 @@ export default function PromoBanner() {
     },
     {
       icon: (
-        <BookText
-          className='h-16 w-16 stroke-[0.8] text-purple-400'
-          aria-hidden
-          strokeLinecap='round'
-          strokeLinejoin='round'
-        />
+        <div className='text-5xl'>📖</div>
       ),
       title: 'Не получается пополнить с помощью банковской карты?',
       bodyText: 'P2P менеджер',
@@ -110,11 +100,7 @@ export default function PromoBanner() {
                     type='button'
                     disabled={!managerLink}
                   >
-                    <span className='leading-none'>{ctaText}</span>
-                    <ArrowRight
-                      className='ml-1 h-4 w-4 flex-shrink-0'
-                      aria-hidden
-                    />
+                    <span className='leading-none'>{ctaText} →</span>
                   </button>
                 </div>
               </div>

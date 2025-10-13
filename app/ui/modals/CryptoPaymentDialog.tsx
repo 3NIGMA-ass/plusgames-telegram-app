@@ -3,9 +3,8 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { Drawer } from 'vaul';
-// Заглушки для иконок
-const ChevronLeft = (props: any) => <div {...props}>←</div>;
-const X = (props: any) => <div {...props}>✕</div>;
+const ChevronLeft = (props: any) => <span {...props}>‹</span>;
+const X = (props: any) => <span {...props}>✕</span>;
 import { useModal } from '../../context/ModalContext';
 import { ModalProps } from '../../context/ModalContext';
 import { useNotification } from '../../context/NotificContext';

@@ -2,15 +2,15 @@
 
 import { motion } from 'framer-motion';
 import { copyToClipboard } from '../lib/utils/copyToClipboard';
-// Заглушки для иконок
+// Эмодзи заглушки для иконок
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const Users = (props: any) => <div {...props}>👥</div>;
+const Users = (props: any) => <span {...props}>👥</span>;
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const Copy = (props: any) => <div {...props}>📋</div>;
+const Copy = (props: any) => <span {...props}>📋</span>;
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const Check = (props: any) => <div {...props}>✓</div>;
+const Check = (props: any) => <span {...props}>✓</span>;
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const Share2 = (props: any) => <div {...props}>📤</div>;
+const Share2 = (props: any) => <span {...props}>📤</span>;
 import { LastReferrals } from '../ui/partners/LastReferrals';
 import { useWebApp } from '../lib/hooks/useWebApp';
 import Footer from '../ui/layout/footer';

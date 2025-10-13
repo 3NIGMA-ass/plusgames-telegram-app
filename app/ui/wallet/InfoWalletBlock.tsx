@@ -1,9 +1,6 @@
-// Заглушки для иконок
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const LucideDollarSign = (props: any) => <div {...props}>?</div>;
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const LucideShieldCheck = (props: any) => <div {...props}>?</div>;
-
+/* eslint-disable @typescript-eslint/no-explicit-any */
+const DollarSign = (props: any) => <span {...props}>💲</span>;
+const ShieldCheck = (props: any) => <span {...props}>🛡️</span>;
 
 export function InfoBlock() {
   return (
@@ -18,7 +15,7 @@ export function InfoBlock() {
         <div className='relative flex items-start gap-1 rounded-[4px] border border-white/20 p-2'>
           <div className='flex-1'>
             <div className='flex items-center'>
-              <LucideDollarSign className='mb-1 mr-1 h-3 w-3 text-purple-400' />
+              <DollarSign className='mb-1 mr-1 h-3 w-3 text-purple-400' />
               <h4 className='mb-1 text-sm font-semibold text-white'>
                 Двойные стандарты
               </h4>
@@ -57,7 +54,7 @@ export function InfoBlock() {
         <div className='relative flex items-start gap-1 rounded-[4px] border border-white/20 p-2'>
           <div className='flex-1'>
             <div className='flex items-center'>
-              <LucideShieldCheck className='mb-1 mr-1 h-3 w-3 text-purple-400' />
+              <ShieldCheck className='mb-1 mr-1 h-3 w-3 text-purple-400' />
               <h4 className='mb-1 text-sm font-semibold text-white'>
                 PLUS Fin
               </h4>

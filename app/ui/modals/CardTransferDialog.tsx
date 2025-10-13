@@ -2,12 +2,9 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { Drawer } from 'vaul';
-// Заглушки для иконок
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const X = (props: any) => <div {...props}>✕</div>;
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const ChevronLeft = (props: any) => <div {...props}>←</div>;
-
+/* eslint-disable @typescript-eslint/no-explicit-any */
+const X = (props: any) => <span {...props}>✕</span>;
+const ChevronLeft = (props: any) => <span {...props}>‹</span>;
 import clsx from 'clsx';
 import { cryptoMethods } from '../../lib/data';
 import { motion } from 'framer-motion';

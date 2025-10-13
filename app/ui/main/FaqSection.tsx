@@ -2,9 +2,8 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-// Заглушки для иконок
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const ChevronDown = (props: any) => <div {...props}>↓</div>;
+/* eslint-disable @typescript-eslint/no-explicit-any */
+const ChevronDown = (props: any) => <span {...props}>▼</span>;
 
 
 const faqItems = [

@@ -1,14 +1,10 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-// Заглушки для иконок
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const Backpack = (props: any) => <div {...props}>?</div>;
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const Briefcase = (props: any) => <div {...props}>?</div>;
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const TrendingUp = (props: any) => <div {...props}>📈</div>;
-
+/* eslint-disable @typescript-eslint/no-explicit-any */
+const Package = (props: any) => <span {...props}>💼</span>;
+const TrendingUp = (props: any) => <span {...props}>📈</span>;
+const Briefcase = (props: any) => <span {...props}>💼</span>;
 import { NextTariffCard } from './NextTariffCard';
 import { useNotification } from '../../context/NotificContext';
 import ReinvestModal from '../modals/ReinvestModal';
@@ -234,7 +230,7 @@ export function TariffCard({
         </div>
       </div>
       <div className='mb-1 flex items-center gap-2 text-xs text-white'>
-        {deposit == 0 && <Backpack className='h-4 w-4 text-purple-400' />}
+        {deposit == 0 && <Package className='h-4 w-4 text-purple-400' />}
         Ваш депозит:
       </div>
 

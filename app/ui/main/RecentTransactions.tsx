@@ -1,14 +1,10 @@
 'use client';
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
+const X = (props: any) => <span {...props}>✕</span>;
+const CircleArrowUp = (props: any) => <span {...props}>⬆️</span>;
+const CircleArrowDown = (props: any) => <span {...props}>⬇️</span>;
 import clsx from 'clsx';
-// Заглушки для иконок
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const CircleArrowDown = (props: any) => <div {...props}>⬇</div>;
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const CircleArrowUp = (props: any) => <div {...props}>⬆</div>;
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const X = (props: any) => <div {...props}>✕</div>;
-
 import useGlobalStore from '../../store/useGlobalStore';
 
 const RecentTransactions: React.FC = () => {

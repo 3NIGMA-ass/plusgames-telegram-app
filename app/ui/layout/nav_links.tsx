@@ -1,19 +1,13 @@
 'use client';
 
-// Заглушки для иконок
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const House = (props: any) => <div {...props}>?</div>;
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const Newspaper = (props: any) => <div {...props}>?</div>;
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const Users = (props: any) => <div {...props}>👥</div>;
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const Banknote = (props: any) => <div {...props}>?</div>;
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const BriefcaseBusiness = (props: any) => <div {...props}>?</div>;
-
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+const House = (props: any) => <span {...props}>🏠</span>;
+const Newspaper = (props: any) => <span {...props}>📰</span>;
+const Users = (props: any) => <span {...props}>👥</span>;
+const Banknote = (props: any) => <span {...props}>💵</span>;
+const BriefcaseBusiness = (props: any) => <span {...props}>💼</span>;
 import clsx from 'clsx';
 
 export function NavLinks() {

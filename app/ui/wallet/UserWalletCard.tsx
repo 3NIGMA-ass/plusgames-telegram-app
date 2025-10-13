@@ -1,12 +1,9 @@
 'use client';
 
-// Заглушки для иконок
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const CircleArrowDown = (props: any) => <div {...props}>⬇</div>;
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const CircleArrowUp = (props: any) => <div {...props}>⬆</div>;
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const Copy = (props: any) => <div {...props}>📋</div>;
+/* eslint-disable @typescript-eslint/no-explicit-any */
+const CircleArrowDown = (props: any) => <span {...props}>⬇️</span>;
+const CircleArrowUp = (props: any) => <span {...props}>⬆️</span>;
+const Copy = (props: any) => <span {...props}>📋</span>;
 import { useModal } from '../../context/ModalContext';
 import { useNotification } from '../../context/NotificContext';
 import useGlobalStore from '../../store/useGlobalStore';

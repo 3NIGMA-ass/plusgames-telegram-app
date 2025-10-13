@@ -1,5 +1,8 @@
 'use client';
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
+const AlertCircle = (props: any) => <span {...props}>⚠️</span>;
+const MessageSquare = (props: any) => <span {...props}>💬</span>;
 import { useState, useEffect, useRef } from 'react';
 import { Drawer } from 'vaul';
 import { useModal } from '../../context/ModalContext';
@@ -10,11 +13,6 @@ import { createCardDepositTransaction } from '../../lib/actions';
 import { useWebApp } from '../../lib/hooks/useWebApp';
 import { support } from '../../lib/images';
 import Image from 'next/image';
-// Заглушки для иконок
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const AlertCircle = (props: any) => <div {...props}>?</div>;
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const MessageSquare = (props: any) => <div {...props}>?</div>;
 
 
 type SelectedCardType = {

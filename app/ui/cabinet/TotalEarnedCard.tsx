@@ -1,9 +1,7 @@
 'use client';
 
-// Заглушки для иконок
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const Wallet = (props: any) => <div {...props}>💳</div>;
-
+/* eslint-disable @typescript-eslint/no-explicit-any */
+const Wallet = (props: any) => <span {...props}>💰</span>;
 
 interface TotalEarnedCardProps {
   deposit: number;

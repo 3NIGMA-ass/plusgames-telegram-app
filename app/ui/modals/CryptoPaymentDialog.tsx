@@ -1,11 +1,10 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
 import { Drawer } from 'vaul';
 // Заглушки для иконок
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const ChevronLeft = (props: any) => <div {...props}>←</div>;
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const X = (props: any) => <div {...props}>✕</div>;
 import { useModal } from '../../context/ModalContext';
 import { ModalProps } from '../../context/ModalContext';
@@ -98,7 +97,8 @@ export function CryptoPaymentDialog({
           `https://api.coingecko.com/api/v3/simple/price?ids=${coinId}&vs_currencies=rub`,
         );
         if (!response.ok) throw new Error('Ошибка загрузки курса');
-        const data = await response.json();
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const data = await response.json() as any;
         const rate = data[coinId].rub;
         if (!rate || typeof rate !== 'number') {
           throw new Error('Некорректный курс');

@@ -11,8 +11,6 @@ const Users = (props: any) => <div {...props}>👥</div>;
 const Banknote = (props: any) => <div {...props}>?</div>;
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const BriefcaseBusiness = (props: any) => <div {...props}>?</div>;
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const  = (props: any) => <div {...props}>?</div>;
 
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';

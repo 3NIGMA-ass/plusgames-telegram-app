@@ -185,48 +185,55 @@ export function ProfitChart({
 
       {/* График */}
       <div className='h-32'>
-        <ResponsiveContainer width='100%' height='100%'>
-          <AreaChart
-            data={profitData}
-            margin={{ top: 10, right: 10, left: 0, bottom: 10 }}
-          >
-            <defs>
-              <linearGradient id='colorProfit' x1='0' y1='0' x2='0' y2='1'>
-                <stop offset='5%' stopColor='#8b5cf6' stopOpacity={0.6} />
-                <stop offset='95%' stopColor='#8b5cf6' stopOpacity={0} />
-              </linearGradient>
-            </defs>
-            <CartesianGrid
-              stroke='#3f3f46'
-              strokeOpacity={0.2}
-              vertical={false}
-            />
-            {React.createElement(XAxis as any, {
+        {React.createElement(ResponsiveContainer as any, { width: '100%', height: '100%' },
+          React.createElement(AreaChart as any, {
+            data: profitData,
+            margin: { top: 10, right: 10, left: 0, bottom: 10 }
+          }, [
+            React.createElement('defs', { key: 'defs' },
+              React.createElement('linearGradient', { id: 'colorProfit', x1: '0', y1: '0', x2: '0', y2: '1' }, [
+                React.createElement('stop', { key: 'stop1', offset: '5%', stopColor: '#8b5cf6', stopOpacity: 0.6 }),
+                React.createElement('stop', { key: 'stop2', offset: '95%', stopColor: '#8b5cf6', stopOpacity: 0 })
+              ])
+            ),
+            React.createElement(CartesianGrid as any, {
+              key: 'grid',
+              stroke: '#3f3f46',
+              strokeOpacity: 0.2,
+              vertical: false
+            }),
+            React.createElement(XAxis as any, {
+              key: 'xaxis',
               dataKey: 'name',
               tick: { fill: '#a1a1aa', fontSize: 10 },
               axisLine: false,
               tickLine: false,
-            })}
-            <YAxis
-              tick={{ fill: '#a1a1aa', fontSize: 10 }}
-              axisLine={false}
-              tickLine={false}
-              width={60}
-              domain={yAxisDomain}
-              tickFormatter={formatYAxis}
-              tickMargin={10}
-            />
-            <Tooltip content={<CustomTooltip />} />
-            <Area
-              type='monotone'
-              dataKey='value'
-              stroke='#8b5cf6'
-              fill='url(#colorProfit)'
-              strokeWidth={2}
-              dot={{ r: 2, fill: '#8b5cf6' }}
-            />
-          </AreaChart>
-        </ResponsiveContainer>
+            }),
+            React.createElement(YAxis as any, {
+              key: 'yaxis',
+              tick: { fill: '#a1a1aa', fontSize: 10 },
+              axisLine: false,
+              tickLine: false,
+              width: 60,
+              domain: yAxisDomain,
+              tickFormatter: formatYAxis,
+              tickMargin: 10,
+            }),
+            React.createElement(Tooltip as any, {
+              key: 'tooltip',
+              content: React.createElement(CustomTooltip as any),
+            }),
+            React.createElement(Area as any, {
+              key: 'area',
+              type: 'monotone',
+              dataKey: 'value',
+              stroke: '#8b5cf6',
+              fill: 'url(#colorProfit)',
+              strokeWidth: 2,
+              dot: { r: 2, fill: '#8b5cf6' },
+            })
+          ])
+        )}
       </div>
 
       {/* Список статистики */}

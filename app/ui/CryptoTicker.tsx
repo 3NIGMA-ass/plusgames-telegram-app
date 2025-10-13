@@ -1,11 +1,9 @@
+/* eslint-disable @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars, react-hooks/exhaustive-deps */
 'use client';
 
 import React from 'react';
 
 // Временные заглушки для модулей
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const useSWR = (url: string, fetcher: any) => {
   const [data, setData] = React.useState(null);
   const [error, setError] = React.useState(null);
@@ -14,17 +12,11 @@ const useSWR = (url: string, fetcher: any) => {
     fetcher(url)
       .then(setData)
       .catch(setError);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [url, fetcher]);
   
   return { data, error };
 };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars
-// eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars
-// eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars
-// eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars
 const Image = ({ src, alt, width, height, className, unoptimized }: any) =>
   React.createElement('img', {
     src,
@@ -35,15 +27,7 @@ const Image = ({ src, alt, width, height, className, unoptimized }: any) =>
     unoptimized
   });
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any
-// eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars
-// eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars
-// eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars
 const ArrowDownRight = (props: any) => React.createElement('svg', props);
-// eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any
-// eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars
-// eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars
-// eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars
 const ArrowUpRight = (props: any) => React.createElement('svg', props);
 
 // Импортируем тип из global.d.ts (не используется, но оставляем для будущего)
@@ -67,7 +51,6 @@ export default function CryptoTicker() {
       <div className="flex items-center justify-between">
         <h3 className="text-sm font-semibold text-white">Криптовалюты</h3>
         <div className="flex space-x-2">
-          {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
           {cryptocurrencies.slice(0, 3).map((crypto: any, index: number) => (
             <div key={index} className="flex items-center space-x-1">
               <Image

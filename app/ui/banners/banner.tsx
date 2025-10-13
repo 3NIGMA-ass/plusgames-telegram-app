@@ -1,37 +1,19 @@
+/* eslint-disable @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars, react/jsx-no-comment-textnodes */
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
 
 // Временные заглушки для модулей
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const Slider = ({ children, ...props }: any) => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const [currentSlide, setCurrentSlide] = useState(0);
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const sliderRef = useRef<any>(null);
   
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const settings = {
     ...props,
     beforeChange: (oldIndex: number, newIndex: number) => {
       setCurrentSlide(newIndex);
       if (props.beforeChange) props.beforeChange(oldIndex, newIndex);
     },
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 ref: (ref: any) => {
       sliderRef.current = ref;
       if (props.ref) props.ref(ref);
@@ -42,9 +24,6 @@ ref: (ref: any) => {
 };
 
 // Заглушка для Base64Image
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const Base64Image = ({ src, alt, className, ...props }: any) => {
   return React.createElement('img', {
     src,
@@ -59,7 +38,6 @@ import { Banner } from '../../../types/global';
 
 export function BannerSlider({ banners }: { banners: Banner[] }) {
   const [currentSlide, setCurrentSlide] = useState(0);
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const sliderRef = useRef<any>(null);
 
   const settings = {
@@ -74,7 +52,6 @@ export function BannerSlider({ banners }: { banners: Banner[] }) {
     beforeChange: (oldIndex: number, newIndex: number) => {
       setCurrentSlide(newIndex);
     },
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     ref: (ref: any) => {
       sliderRef.current = ref;
     }
@@ -98,10 +75,7 @@ export function BannerSlider({ banners }: { banners: Banner[] }) {
   return (
     <section className="relative mb-4 max-w-full select-none overflow-hidden rounded-2xl bg-[#121212] text-white shadow-lg">
       <Slider {...settings}>
-        {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-{banners.map((banner: any, index: number) => (
+        {banners.map((banner, index: number) => (
           <div key={index}>
             <div className="flex max-h-36 min-h-[100px]">
               <div className="flex items-center justify-center rounded-2xl bg-gradient-to-tr from-black via-[#1a1a1a] to-[#2a2a2a] px-2">

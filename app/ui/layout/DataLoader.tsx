@@ -111,29 +111,72 @@ export default function DataLoader() {
       try {
         await animateProgress(15, 300);
         await new Promise((res) => setTimeout(res, 100));
-        const data = await fetchInitialData(telegramId);
+        
+        // Добавляем таймаут для fetchInitialData
+        const timeoutPromise = new Promise((_, reject) =>
+          setTimeout(() => reject(new Error('Timeout')), 10000)
+        );
+        
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const data: any = await Promise.race([
+          fetchInitialData(telegramId),
+          timeoutPromise
+        ]).catch((err) => {
+          console.error('Ошибка загрузки данных:', err);
+          return {
+            user: null,
+            transactions: [],
+            partnerEarnings: [],
+            depositEarnings: [],
+            reinvestments: [],
+            recentTransactions: [],
+            totalUsers: 0,
+            hasPartnerWithMinDeposit: false,
+            totalReferrals: 0,
+            appConfig: []
+          };
+        });
+        
         if (!isMounted) return;
         await animateProgress(40, 400);
         await new Promise((res) => setTimeout(res, 100));
 
         const tgUser = user as UserDataTg;
 
-        if (data.user) {
-          const updatedUser = await updateUserTgData(
-            data.user.telegram_id.toString(),
-            tgUser.first_name,
-            tgUser.photo_url,
-            tgUser.username,
-          );
-          setUser(updatedUser);
-        } else {
-          const newUser = await createUser(
-            telegramId,
-            tgUser.first_name,
-            tgUser.photo_url,
-            tgUser.username,
-          );
-          setUser(newUser);
+        try {
+          if (data.user) {
+            const updatedUser = await updateUserTgData(
+              data.user.telegram_id.toString(),
+              tgUser.first_name,
+              tgUser.photo_url,
+              tgUser.username,
+            );
+            setUser(updatedUser);
+          } else {
+            const newUser = await createUser(
+              telegramId,
+              tgUser.first_name,
+              tgUser.photo_url,
+              tgUser.username,
+            );
+            setUser(newUser);
+          }
+        } catch (dbError) {
+          console.error('Ошибка работы с БД:', dbError);
+          // Устанавливаем пользователя из Telegram данных
+          setUser({
+            telegram_id: telegramId.toString(),
+            first_name: tgUser.first_name,
+            username: tgUser.username || null,
+            photo_url: tgUser.photo_url || null,
+            balance: 0,
+            deposit_amount: 0,
+            total_profit: 0,
+            partner_bonus_received: false,
+            created_at: new Date(),
+            referred_by: null,
+            last_deposit_at: null,
+          });
         }
 
         await animateProgress(70, 400);
@@ -171,12 +214,19 @@ export default function DataLoader() {
           }, 500);
         }
       } catch (error) {
-        console.error('Ошибка загрузки данных:', error);
+        console.error('Критическая ошибка загрузки:', error);
         if (isMounted) {
+          // Всё равно показываем приложение, даже если данные не загрузились
+          await animateProgress(100, 200);
+          setIsVisible(false);
+          setTimeout(() => {
+            setIsDataLoaded(true);
+          }, 500);
+          
           showNotification(
-            'Ошибка загрузки',
+            'Ошибка подключения',
             'error',
-            'Попробуйте перезапустить приложение',
+            'Не удалось загрузить данные. Попробуйте позже.',
           );
         }
       }

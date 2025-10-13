@@ -40,7 +40,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({
 
   return (
     <>
-      <style jsx global>{`
+      <style>{`
         .logo-path {
           filter: drop-shadow(0 0 12px #9333ea);
           animation: logoPulse 2.5s ease-in-out infinite alternate;

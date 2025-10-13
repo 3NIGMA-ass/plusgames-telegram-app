@@ -11,14 +11,16 @@ const X = (props: any) => <div {...props}>✕</div>;
 interface QRCodeDialogProps {
   isOpen: boolean;
   onClose: () => void;
-  walletAddress: string;
+  qrData: string;
+  title: string;
   isClosing?: boolean;
 }
 
 export function QRCodeDialog({
   isOpen,
   onClose,
-  walletAddress,
+  qrData,
+  title,
   isClosing,
 }: QRCodeDialogProps) {
   const dialogRef = useRef<HTMLDivElement>(null);
@@ -35,7 +37,7 @@ export function QRCodeDialog({
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [isOpen, onClose, walletAddress]);
+  }, [isOpen, onClose, qrData]);
 
   return (
     <Drawer.Root
@@ -62,12 +64,12 @@ export function QRCodeDialog({
               <X size={30} />
             </Drawer.Close>
             <Drawer.Title className='mt-4 text-lg font-semibold tracking-tight text-white md:text-2xl'>
-              Криптовалютный платеж
+              {title}
             </Drawer.Title>
             <div className='flex w-full grow flex-col items-center justify-center'>
               <QRCodeCanvas
                 ref={qrRef}
-                value={walletAddress}
+                value={qrData}
                 size={200}
                 bgColor='#ffffff'
                 fgColor='black'

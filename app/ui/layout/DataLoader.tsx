@@ -152,6 +152,9 @@ export default function DataLoader() {
             id: 1,
             manager_link: 'manager_link',
             referral_percent: 12,
+            useapiforcard: false,
+            api_amount_ranges: [],
+            manager_only_threshold: 0,
           },
         );
 

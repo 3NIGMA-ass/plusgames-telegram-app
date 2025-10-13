@@ -29,7 +29,7 @@ export interface ModalProps {
     method: string;
   };
   QRCodeDialog: { qrData: string; title: string };
-  CardTransferConfirmationDialog: { methodId: string };
+  CardTransferConfirmationDialog: { methodId: string; amount: number };
 }
 
 // Простая заглушка для контекста
@@ -40,8 +40,10 @@ export const ModalProvider = ({ children }: { children: React.ReactNode }) => {
 export const useModal = () => {
   return {
     state: { modals: [] },
-    openModal: () => {},
-    closeModal: () => {},
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any
+    openModal: (_type?: ModalType, _props?: any) => {},
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    closeModal: (_id?: string) => {},
     closeAllModals: () => {},
   };
 };

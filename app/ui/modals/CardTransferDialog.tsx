@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useMemo, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Drawer } from 'vaul';
 // Заглушки для иконок
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -117,19 +117,19 @@ export function CardTransferDialog({
   const isAmountValid =
     !isNaN(parsedAmount) && parsedAmount >= 250 && parsedAmount <= 10000000;
 
-  const bonus = useMemo(() => {
-    if (!isAmountValid) return null;
+  let bonus = null;
+  if (isAmountValid) {
     for (const b of bonuses) {
       if (
         parsedAmount >= b.min_deposit &&
         (!b.max_deposit || parsedAmount <= b.max_deposit)
       ) {
         const bonusAmount = (parsedAmount * b.percentage) / 100;
-        return { bonusAmount, percentage: b.percentage };
+        bonus = { bonusAmount, percentage: b.percentage };
+        break;
       }
     }
-    return null;
-  }, [bonuses, isAmountValid, parsedAmount]);
+  }
 
   console.log('Calculated bonus:', bonus);
 
@@ -137,7 +137,7 @@ export function CardTransferDialog({
     setAmount(value.toString());
   };
 
-  const handleAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleAmountChange = (e: { target: { value: string } }) => {
     const value = e.target.value;
     const parsed = parseFloat(value);
     if (isNaN(parsed) || parsed <= 10000000) {
@@ -145,7 +145,7 @@ export function CardTransferDialog({
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
     if (isAmountValid) {
       if (isCryptoMethod && selectedMethod?.network) {

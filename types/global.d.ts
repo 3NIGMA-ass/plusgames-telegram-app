@@ -109,7 +109,14 @@ export interface CryptoCurrency {
 
 // Типы для баннеров
 export interface Banner {
-  banner_image_url: string;
+  icon?: string;
+  title?: string;
+  bodyText?: string;
+  bodyLink?: string;
+  ctaText?: string;
+  ctaLink?: string;
+  // Старые поля для совместимости
+  banner_image_url?: string;
   banner_url?: string;
   button_title?: string;
   button_url?: string;

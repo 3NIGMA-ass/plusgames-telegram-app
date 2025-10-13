@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Drawer } from 'vaul';
 import useGlobalStore from '../../store/useGlobalStore';
 import { useNotification } from '../../context/NotificContext';
@@ -31,24 +31,19 @@ export default function DepositEarningsModal({
     }
   }, [isOpen, wasOpenedOnce, onFinish]);
 
-  const currentTariff = useMemo(() => {
-    return (
-      tariffs
-        .filter((t) => (user?.deposit_amount || 0) >= (t.amountMin ?? 0))
-        .sort((a, b) => b.rate - a.rate)[0] || null
-    );
-  }, [user]);
+  const currentTariff =
+    tariffs
+      .filter((t) => (user?.deposit_amount || 0) >= (t.amountMin ?? 0))
+      .sort((a, b) => b.rate - a.rate)[0] || null;
 
   // Расчет накоплений
-  const accumulation = useMemo(() => {
-    if (
-      !depositEarnings ||
-      !Array.isArray(depositEarnings) ||
-      !user ||
-      user.deposit_amount <= 0
-    ) {
-      return 0.0;
-    }
+  let accumulation = 0.0;
+  if (
+    depositEarnings &&
+    Array.isArray(depositEarnings) &&
+    user &&
+    user.deposit_amount > 0
+  ) {
     const total = depositEarnings
       .filter((earning: DepositEarning) => !earning?.last_collected_at)
       .reduce(
@@ -56,8 +51,8 @@ export default function DepositEarningsModal({
           sum + (isNaN(Number(earning?.amount)) ? 0 : Number(earning.amount)),
         0,
       );
-    return Number(total.toFixed(2));
-  }, [depositEarnings, user]);
+    accumulation = Number(total.toFixed(2));
+  }
 
   // Проверка условий и начисление накоплений
   useEffect(() => {

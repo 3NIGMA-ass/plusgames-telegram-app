@@ -1,5 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 
+import React, { useState, useEffect } from 'react';
 import {
   AreaChart,
   Area,
@@ -14,7 +16,6 @@ import {
   NameType,
   ValueType,
 } from 'recharts/types/component/DefaultTooltipContent';
-import { useState, useEffect } from 'react';
 
 interface ProfitChartProps {
   profitData: { name: string; value: number }[];
@@ -200,12 +201,12 @@ export function ProfitChart({
               strokeOpacity={0.2}
               vertical={false}
             />
-            <XAxis
-              dataKey='name'
-              tick={{ fill: '#a1a1aa', fontSize: 10 }}
-              axisLine={false}
-              tickLine={false}
-            />
+            {React.createElement(XAxis as any, {
+              dataKey: 'name',
+              tick: { fill: '#a1a1aa', fontSize: 10 },
+              axisLine: false,
+              tickLine: false,
+            })}
             <YAxis
               tick={{ fill: '#a1a1aa', fontSize: 10 }}
               axisLine={false}

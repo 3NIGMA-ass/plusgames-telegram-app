@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useLayoutEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 // Заглушки для иконок
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -72,7 +72,7 @@ function Accordion({ answer }: { answer: string }) {
   const ref = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(0);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (ref.current) {
       setHeight(ref.current.scrollHeight);
     }
